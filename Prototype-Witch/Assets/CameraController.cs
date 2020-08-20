@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] private GameObject objectToLookAt = null;
     [SerializeField] private float distance = 10;
-    [SerializeField] private AnimationCurve animationCurve = default;
+
     private float currentXPos = 0f;
     private float currentYPos = 0f;
     private Vector3 position = default;
@@ -48,7 +48,7 @@ public class CameraController : MonoBehaviour
         }
         else
         {
-            transform.position = Vector3.Lerp(transform.position, objectToLookAt.transform.position + new Vector3(0, 2, -2), Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, objectToLookAt.transform.position + new Vector3(0, 1, -distance), Time.deltaTime);
             transform.rotation =  Quaternion.Lerp(transform.rotation, objectToLookAt.transform.rotation, Time.deltaTime);
         }
 

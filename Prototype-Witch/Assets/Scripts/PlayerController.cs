@@ -30,28 +30,31 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            newRotation = Quaternion.Euler(-1 * Time.deltaTime * 50, 0, 0);
+            newRotation *= Quaternion.Euler(-1 * Time.deltaTime * 50, 0, 0);
         }
-        else if(Input.GetKey(KeyCode.D))
+        
+        if(Input.GetKey(KeyCode.D))
         {
-            newRotation = Quaternion.Euler(0, 1 * Time.deltaTime * 50, 0);
+            newRotation *= Quaternion.Euler(0, 1 * Time.deltaTime * 50, 0);
         }
-        else if (Input.GetKey(KeyCode.A))
+        
+        if (Input.GetKey(KeyCode.A))
         {
-            newRotation = Quaternion.Euler(0, -1 * Time.deltaTime * 50, 0);
+            newRotation *= Quaternion.Euler(0, -1 * Time.deltaTime * 50, 0);
         }
-        else if (Input.GetKey(KeyCode.S))
+        
+        if (Input.GetKey(KeyCode.S))
         {
-            newRotation = Quaternion.Euler(1 * Time.deltaTime * 50, 0, 0);
+            newRotation *= Quaternion.Euler(1 * Time.deltaTime * 50, 0, 0);
         }
 
         if (Input.GetKey(KeyCode.E))
         {
-            transform.rotation *= Quaternion.Euler(new Vector3(0, 0, 1));
+            transform.rotation *= Quaternion.Euler(new Vector3(0, 0, -0.25f));
         }
         else if(Input.GetKey(KeyCode.Q))
         {
-            transform.rotation *= Quaternion.Euler(new Vector3(0, 0, -1));
+            transform.rotation *= Quaternion.Euler(new Vector3(0, 0, 0.25f));
         }
 
         transform.rotation *= newRotation;
