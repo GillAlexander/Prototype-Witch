@@ -620,7 +620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToLookAt: {fileID: 324684682}
-  distance: 10
+  distance: 2
   animationCurve:
     serializedVersion: 2
     m_Curve:
@@ -1204,6 +1204,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5599930108664814102, guid: 7dd4d3e851bf1a4488aac1e24b68847a, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8252824150609486809, guid: 7dd4d3e851bf1a4488aac1e24b68847a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 489.5
