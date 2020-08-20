@@ -44,12 +44,11 @@ public class CameraController : MonoBehaviour
             transform.LookAt(objectToLookAt.transform.position);
 
             transform.position = objectToLookAt.transform.position + newRotation * position;
-
         }
         else
         {
-            transform.position = Vector3.Lerp(transform.position, objectToLookAt.transform.position + new Vector3(0, 2, -2), Time.deltaTime);
-            transform.rotation =  Quaternion.Lerp(transform.rotation, objectToLookAt.transform.rotation, Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, objectToLookAt.transform.position + objectToLookAt.transform.rotation * new Vector3(0, 2, -distance), Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, objectToLookAt.transform.rotation, Time.deltaTime);
         }
 
         if (Input.GetMouseButtonUp(1))
